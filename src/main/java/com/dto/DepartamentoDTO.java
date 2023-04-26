@@ -7,11 +7,11 @@ import java.util.List;
 public class DepartamentoDTO implements Serializable {
 	private static final long serialVersionUID = 3L;
 	private int id;
-	private String nomnbreDepartamento;
+	private String nombreDepartamento;
 	private List<EmpleadoDTO> listaEmpleados;
 
 	public DepartamentoDTO(String nomnbreDepartamento, List<EmpleadoDTO> listaEmpleados) {
-		this.nomnbreDepartamento = nomnbreDepartamento;
+		this.nombreDepartamento = nomnbreDepartamento;
 		this.listaEmpleados = listaEmpleados;
 	}
 
@@ -26,12 +26,12 @@ public class DepartamentoDTO implements Serializable {
 		this.id = id;
 	}
 
-	public String getNomnbreDepartamento() {
-		return nomnbreDepartamento;
+	public String getNombreDepartamento() {
+		return nombreDepartamento;
 	}
 
-	public void setNomnbreDepartamento(String nomnbreDepartamento) {
-		this.nomnbreDepartamento = nomnbreDepartamento;
+	public void setNombreDepartamento(String nomnbreDepartamento) {
+		this.nombreDepartamento = nomnbreDepartamento;
 	}
 
 	public List<EmpleadoDTO> getListaEmpleados() {
@@ -44,7 +44,7 @@ public class DepartamentoDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Departamento [id=" + id + ", nomnbreDepartamento=" + nomnbreDepartamento + ", listaEmpleados="
+		return "Departamento [id=" + id + ", nombreDepartamento=" + nombreDepartamento + ", listaEmpleados="
 				+ listaEmpleados + "]";
 	}
 

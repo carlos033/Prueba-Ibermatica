@@ -23,12 +23,12 @@ public class Departamento implements Serializable {
 	@Id
 	private int id;
 	@Schema(example = "Ventas")
-	private String nomnbreDepartamento;
+	private String nombreDepartamento;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "departamento")
 	private List<Empleado> listaEmpleados;
 
 	public Departamento(String nomnbreDepartamento, List<Empleado> listaEmpleados) {
-		this.nomnbreDepartamento = nomnbreDepartamento;
+		this.nombreDepartamento = nomnbreDepartamento;
 		this.listaEmpleados = listaEmpleados;
 	}
 
@@ -45,11 +45,11 @@ public class Departamento implements Serializable {
 	}
 
 	public String getNomnbreDepartamento() {
-		return nomnbreDepartamento;
+		return nombreDepartamento;
 	}
 
 	public void setNomnbreDepartamento(String nomnbreDepartamento) {
-		this.nomnbreDepartamento = nomnbreDepartamento;
+		this.nombreDepartamento = nomnbreDepartamento;
 	}
 
 	public List<Empleado> getListaEmpleados() {
@@ -62,7 +62,7 @@ public class Departamento implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Departamento [id=" + id + ", nomnbreDepartamento=" + nomnbreDepartamento + ", listaEmpleados="
+		return "Departamento [id=" + id + ", nomnbreDepartamento=" + nombreDepartamento + ", listaEmpleados="
 				+ listaEmpleados + "]";
 	}
 }

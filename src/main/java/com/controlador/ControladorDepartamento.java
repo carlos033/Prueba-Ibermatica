@@ -26,7 +26,7 @@ import com.servicio.interfaz.ServicioDepartamento;
 import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
-@RequestMapping("/departamento")
+@RequestMapping("/departamentoController")
 public class ControladorDepartamento {
 	@Autowired
 	private ServicioDepartamento servicio;
@@ -35,7 +35,7 @@ public class ControladorDepartamento {
 	@Autowired
 	private MapeoEmpleado mapperE;
 
-	@PostMapping(value = "/departamento")
+	@PostMapping
 	@ResponseBody
 	@Operation(summary = "Crear un departamento", description = "insertar un departamento")
 	public ResponseEntity<Void> insertarDepartamento(@RequestBody DepartamentoDTO dto) {
