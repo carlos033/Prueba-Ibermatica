@@ -27,8 +27,8 @@ public class Departamento implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "departamento")
 	private List<Empleado> listaEmpleados;
 
-	public Departamento(String nomnbreDepartamento, List<Empleado> listaEmpleados) {
-		this.nombreDepartamento = nomnbreDepartamento;
+	public Departamento(String nombreDepartamento, List<Empleado> listaEmpleados) {
+		this.nombreDepartamento = nombreDepartamento;
 		this.listaEmpleados = listaEmpleados;
 	}
 
@@ -44,12 +44,12 @@ public class Departamento implements Serializable {
 		this.id = id;
 	}
 
-	public String getNomnbreDepartamento() {
+	public String getNombreDepartamento() {
 		return nombreDepartamento;
 	}
 
-	public void setNomnbreDepartamento(String nomnbreDepartamento) {
-		this.nombreDepartamento = nomnbreDepartamento;
+	public void setNombreDepartamento(String nombreDepartamento) {
+		this.nombreDepartamento = nombreDepartamento;
 	}
 
 	public List<Empleado> getListaEmpleados() {
@@ -62,7 +62,7 @@ public class Departamento implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Departamento [id=" + id + ", nomnbreDepartamento=" + nombreDepartamento + ", listaEmpleados="
+		return "Departamento [id=" + id + ", nombreDepartamento=" + nombreDepartamento + ", listaEmpleados="
 				+ listaEmpleados + "]";
 	}
 }

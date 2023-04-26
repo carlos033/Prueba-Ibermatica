@@ -10,8 +10,8 @@ public class DepartamentoDTO implements Serializable {
 	private String nombreDepartamento;
 	private List<EmpleadoDTO> listaEmpleados;
 
-	public DepartamentoDTO(String nomnbreDepartamento, List<EmpleadoDTO> listaEmpleados) {
-		this.nombreDepartamento = nomnbreDepartamento;
+	public DepartamentoDTO(String nombreDepartamento, List<EmpleadoDTO> listaEmpleados) {
+		this.nombreDepartamento = nombreDepartamento;
 		this.listaEmpleados = listaEmpleados;
 	}
 
@@ -30,8 +30,8 @@ public class DepartamentoDTO implements Serializable {
 		return nombreDepartamento;
 	}
 
-	public void setNombreDepartamento(String nomnbreDepartamento) {
-		this.nombreDepartamento = nomnbreDepartamento;
+	public void setNombreDepartamento(String nombreDepartamento) {
+		this.nombreDepartamento = nombreDepartamento;
 	}
 
 	public List<EmpleadoDTO> getListaEmpleados() {

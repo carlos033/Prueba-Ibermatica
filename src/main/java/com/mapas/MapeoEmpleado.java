@@ -1,7 +1,5 @@
 package com.mapas;
 
-import java.util.List;
-
 import org.mapstruct.Mapper;
 
 import com.dao.Empleado;
@@ -12,7 +10,4 @@ public interface MapeoEmpleado {
 	EmpleadoDTO mapeoADTO(Empleado dAO);
 
 	Empleado mapeoADAO(EmpleadoDTO dTO);
-	
-	List<EmpleadoDTO> mapeoListasADTO(List<Empleado> listaDAO);
-
 }

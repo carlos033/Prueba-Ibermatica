@@ -1,5 +1,7 @@
 package com.servicio.implementacion;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ public class ServicioEmpleadoImp implements ServicioEmpleado {
 	private EmpleadoRepositorio repositorio;
 
 	@Override
+	@Transactional
 	public Empleado buscarEmpleado(int id) throws ExcepcionServicio {
 		return repositorio.findById(id).orElseThrow(() -> new ExcepcionServicio("El empleado con ese Id no existe"));
 	}

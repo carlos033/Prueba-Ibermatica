@@ -2,6 +2,7 @@ package com.controlador;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.dao.Empleado;
 import com.dto.DepartamentoDTO;
 import com.dto.EmpleadoDTO;
 import com.excepcion.ExcepcionServicio;
@@ -49,7 +51,9 @@ public class ControladorDepartamento {
 	public ResponseEntity<List<EmpleadoDTO>> listarEmpleadosXDepartamento(@PathVariable("id") int id) {
 		List<EmpleadoDTO> listaEmpleadosDTO = new ArrayList<>();
 		try {
-			listaEmpleadosDTO = mapperE.mapeoListasADTO(servicio.listarEmpleadoXDepartamento(id));
+			List<Empleado> listaEmpleados = servicio.listarEmpleadoXDepartamento(id);
+			listaEmpleadosDTO = listaEmpleados.stream().map(mapperE::mapeoADTO).collect(Collectors.toList());
+
 		} catch (ExcepcionServicio e) {
 			throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
 		}
