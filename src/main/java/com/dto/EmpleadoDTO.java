@@ -2,18 +2,15 @@ package com.dto;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 public class EmpleadoDTO implements Serializable {
 
 	private static final long serialVersionUID = 4L;
 	private int id;
 	private String nombre;
 	private String apellido;
-    @JsonIgnoreProperties("listaEmpleados")
-	private DepartamentoDTO departamento;
+	private DepartamentoDTOsinList departamento;
 
-	public EmpleadoDTO(int id, String nombre, String apellido, DepartamentoDTO departamento) {
+	public EmpleadoDTO(int id, String nombre, String apellido, DepartamentoDTOsinList departamento) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -47,11 +44,11 @@ public class EmpleadoDTO implements Serializable {
 		this.apellido = apellido;
 	}
 
-	public DepartamentoDTO getDepartamento() {
+	public DepartamentoDTOsinList getDepartamento() {
 		return departamento;
 	}
 
-	public void setDepartamento(DepartamentoDTO departamento) {
+	public void setDepartamento(DepartamentoDTOsinList departamento) {
 		this.departamento = departamento;
 	}
 

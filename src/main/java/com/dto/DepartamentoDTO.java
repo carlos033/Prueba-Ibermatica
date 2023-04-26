@@ -1,8 +1,8 @@
 package com.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
-
 
 public class DepartamentoDTO implements Serializable {
 	private static final long serialVersionUID = 3L;
@@ -16,6 +16,7 @@ public class DepartamentoDTO implements Serializable {
 	}
 
 	public DepartamentoDTO() {
+		this.listaEmpleados = new ArrayList<>();
 	}
 
 	public int getId() {
