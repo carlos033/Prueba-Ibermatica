@@ -1,0 +1,23 @@
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
+server:
+  error:
+    include-stacktrace: never
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: ''
+    url: jdbc:mysql://localhost:3306/ibermatica?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        type: trace
+    show-sql: true
