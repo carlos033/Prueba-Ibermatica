@@ -23,14 +23,14 @@ import com.servicio.interfaz.ServicioEmpleado;
 import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
-@RequestMapping("/empleado")
+@RequestMapping("/empleadoControler")
 public class ControladorEmpleado {
 	@Autowired
 	private ServicioEmpleado servicio;
 	@Autowired
 	private MapeoEmpleado mapperE;
 
-	@PostMapping(value = "/departamento")
+	@PostMapping
 	@ResponseBody
 	@Operation(summary = "Crear un empleado", description = "insertar un empleado")
 	public ResponseEntity<Void> insertarEmpleado(@RequestBody EmpleadoDTO dto) {
@@ -60,7 +60,7 @@ public class ControladorEmpleado {
 
 	}
 
-	@PutMapping(value = "/departamento")
+	@PutMapping
 	@ResponseBody
 	@Operation(description = "Modificarr un empleado")
 	public ResponseEntity<Void> modificarEmpleado(@RequestBody EmpleadoDTO dto) {

@@ -54,6 +54,6 @@ public class ControladorDepartamento {
 			throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
 		}
 		HttpHeaders httpHeaders = new HttpHeaders();
-		return new ResponseEntity<List<EmpleadoDTO>>(listaEmpleadosDTO, httpHeaders, HttpStatus.OK);
+		return new ResponseEntity<>(listaEmpleadosDTO, httpHeaders, HttpStatus.OK);
 	}
 }
