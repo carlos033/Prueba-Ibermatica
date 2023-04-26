@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.dto.EmpleadoDTO;
+import com.dto.EmpleadoDTOSinList;
 import com.excepcion.ExcepcionServicio;
 import com.mapas.MapeoEmpleado;
 import com.servicio.interfaz.ServicioEmpleado;
@@ -51,9 +52,9 @@ public class ControladorEmpleado {
 
 	@GetMapping("/{id}")
 	@ResponseBody
-	public ResponseEntity<EmpleadoDTO> buscarVuelo(@PathVariable("id") int id) {
+	public ResponseEntity<EmpleadoDTOSinList> buscarEmpleado(@PathVariable("id") int id) {
 		try {
-			return new ResponseEntity<>(mapperE.mapeoADTO(servicio.buscarEmpleado(id)), HttpStatus.OK);
+			return new ResponseEntity<>(mapperE.mapeoADTOSinList(servicio.buscarEmpleado(id)), HttpStatus.OK);
 		} catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
 		}

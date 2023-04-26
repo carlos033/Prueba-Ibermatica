@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.dao.Empleado;
 import com.dto.DepartamentoDTO;
-import com.dto.EmpleadoDTO;
+import com.dto.EmpleadoDTOSinList;
 import com.excepcion.ExcepcionServicio;
 import com.mapas.MapeoDepartamento;
 import com.mapas.MapeoEmpleado;
@@ -48,16 +47,15 @@ public class ControladorDepartamento {
 	@GetMapping("/{id}")
 	@ResponseBody
 	@Operation(description = "listar los empleados de un departamento segun su id")
-	public ResponseEntity<List<EmpleadoDTO>> listarEmpleadosXDepartamento(@PathVariable("id") int id) {
-		List<EmpleadoDTO> listaEmpleadosDTO = new ArrayList<>();
+	public ResponseEntity<List<EmpleadoDTOSinList>> listarEmpleadosXDepartamento(@PathVariable("id") int id) {
+		List<Empleado> listaEmpleados = new ArrayList<>();
 		try {
-			List<Empleado> listaEmpleados = servicio.listarEmpleadoXDepartamento(id);
-			listaEmpleadosDTO = listaEmpleados.stream().map(mapperE::mapeoADTO).collect(Collectors.toList());
+			listaEmpleados = servicio.listarEmpleadoXDepartamento(id);
 
 		} catch (ExcepcionServicio e) {
 			throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
 		}
-		HttpHeaders httpHeaders = new HttpHeaders();
-		return new ResponseEntity<>(listaEmpleadosDTO, httpHeaders, HttpStatus.OK);
+		return new ResponseEntity<>(listaEmpleados.stream().map(mapperE::mapeoADTOSinList).collect(Collectors.toList()),
+				HttpStatus.OK);
 	}
 }

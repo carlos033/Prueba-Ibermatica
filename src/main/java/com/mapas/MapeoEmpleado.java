@@ -4,10 +4,12 @@ import org.mapstruct.Mapper;
 
 import com.dao.Empleado;
 import com.dto.EmpleadoDTO;
+import com.dto.EmpleadoDTOSinList;
 
 @Mapper(componentModel = "spring")
 public interface MapeoEmpleado {
-	EmpleadoDTO mapeoADTO(Empleado dAO);
+
+	EmpleadoDTOSinList mapeoADTOSinList(Empleado dAO);
 
 	Empleado mapeoADAO(EmpleadoDTO dTO);
 }

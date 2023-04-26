@@ -2,24 +2,22 @@ package com.dto;
 
 import java.io.Serializable;
 
-import com.dao.Departamento;
+public class EmpleadoDTOSinList implements Serializable {
 
-public class EmpleadoDTO implements Serializable {
-
-	private static final long serialVersionUID = 4L;
+	private static final long serialVersionUID = 6L;
 	private int id;
 	private String nombre;
 	private String apellido;
-	private Departamento departamento;
+	private DepartamentoDTOsinList departamento;
 
-	public EmpleadoDTO(int id, String nombre, String apellido, Departamento departamento) {
+	public EmpleadoDTOSinList(int id, String nombre, String apellido, DepartamentoDTOsinList departamento) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.departamento = departamento;
 	}
 
-	public EmpleadoDTO() {
+	public EmpleadoDTOSinList() {
 	}
 
 	public int getId() {
@@ -46,11 +44,11 @@ public class EmpleadoDTO implements Serializable {
 		this.apellido = apellido;
 	}
 
-	public Departamento getDepartamento() {
+	public DepartamentoDTOsinList getDepartamento() {
 		return departamento;
 	}
 
-	public void setDepartamento(Departamento departamento) {
+	public void setDepartamento(DepartamentoDTOsinList departamento) {
 		this.departamento = departamento;
 	}
 
